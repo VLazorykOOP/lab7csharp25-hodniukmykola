@@ -1,5 +1,5 @@
 ﻿
-namespace Lab7CSharp
+namespace TrafficLightSimulation
 {
     partial class Form1
     {
@@ -29,40 +29,95 @@ namespace Lab7CSharp
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.components = new System.ComponentModel.Container();
+            this.panelYellow = new System.Windows.Forms.Panel();
+            this.panelRed = new System.Windows.Forms.Panel();
+            this.panelGreen = new System.Windows.Forms.Panel();
+            this.numericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.buttonStart = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // panelYellow
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.PaleGreen;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, ((byte)(204)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label1.Location = new System.Drawing.Point(376, -1);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 18);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Lab 7.   C# ";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.panelYellow.Location = new System.Drawing.Point(217, 149);
+            this.panelYellow.Name = "panelYellow";
+            this.panelYellow.Size = new System.Drawing.Size(200, 100);
+            this.panelYellow.TabIndex = 0;
+            // 
+            // panelRed
+            // 
+            this.panelRed.Location = new System.Drawing.Point(217, 43);
+            this.panelRed.Name = "panelRed";
+            this.panelRed.Size = new System.Drawing.Size(200, 100);
+            this.panelRed.TabIndex = 1;
+            // 
+            // panelGreen
+            // 
+            this.panelGreen.Location = new System.Drawing.Point(217, 255);
+            this.panelGreen.Name = "panelGreen";
+            this.panelGreen.Size = new System.Drawing.Size(200, 100);
+            this.panelGreen.TabIndex = 2;
+            this.panelGreen.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            // 
+            // numericUpDown
+            // 
+            this.numericUpDown.Location = new System.Drawing.Point(59, 43);
+            this.numericUpDown.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numericUpDown.Name = "numericUpDown";
+            this.numericUpDown.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDown.TabIndex = 3;
+            this.numericUpDown.Value = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numericUpDown.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            // 
+            // buttonStart
+            // 
+            this.buttonStart.Location = new System.Drawing.Point(110, 109);
+            this.buttonStart.Name = "buttonStart";
+            this.buttonStart.Size = new System.Drawing.Size(75, 23);
+            this.buttonStart.TabIndex = 4;
+            this.buttonStart.Text = "Start";
+            this.buttonStart.UseVisualStyleBackColor = true;
+            this.buttonStart.Click += new System.EventHandler(this.buttonStart_Click_1);
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.buttonStart_Click);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 386);
-            this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ClientSize = new System.Drawing.Size(587, 367);
+            this.Controls.Add(this.buttonStart);
+            this.Controls.Add(this.numericUpDown);
+            this.Controls.Add(this.panelGreen);
+            this.Controls.Add(this.panelRed);
+            this.Controls.Add(this.panelYellow);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Load += new System.EventHandler(this.numericUpDownInterval_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panelYellow;
+        private System.Windows.Forms.Panel panelRed;
+        private System.Windows.Forms.Panel panelGreen;
+        private System.Windows.Forms.NumericUpDown numericUpDown;
+        private System.Windows.Forms.Button buttonStart;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
