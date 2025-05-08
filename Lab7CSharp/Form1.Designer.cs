@@ -59,7 +59,7 @@ namespace TrafficLightSimulation
             this.panelGreen.Name = "panelGreen";
             this.panelGreen.Size = new System.Drawing.Size(200, 100);
             this.panelGreen.TabIndex = 2;
-            this.panelGreen.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+
             // 
             // numericUpDown
             // 
@@ -70,7 +70,7 @@ namespace TrafficLightSimulation
             0,
             0});
             this.numericUpDown.Name = "numericUpDown";
-            this.numericUpDown.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDown.Size = new System.Drawing.Size(120, 22);
             this.numericUpDown.TabIndex = 3;
             this.numericUpDown.Value = new decimal(new int[] {
             1000,
@@ -78,6 +78,7 @@ namespace TrafficLightSimulation
             0,
             0});
             this.numericUpDown.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            this.numericUpDown.Click += new System.EventHandler(this.numericUpDown_Click);
             // 
             // buttonStart
             // 
@@ -87,7 +88,7 @@ namespace TrafficLightSimulation
             this.buttonStart.TabIndex = 4;
             this.buttonStart.Text = "Start";
             this.buttonStart.UseVisualStyleBackColor = true;
-            this.buttonStart.Click += new System.EventHandler(this.buttonStart_Click_1);
+            this.buttonStart.Click += new System.EventHandler(this.buttonStart_Click);
             // 
             // timer1
             // 
@@ -96,14 +97,14 @@ namespace TrafficLightSimulation
             // 
             // Form1
             // 
-            this.ClientSize = new System.Drawing.Size(587, 367);
+            this.ClientSize = new System.Drawing.Size(980, 358);
             this.Controls.Add(this.buttonStart);
             this.Controls.Add(this.numericUpDown);
             this.Controls.Add(this.panelGreen);
             this.Controls.Add(this.panelRed);
             this.Controls.Add(this.panelYellow);
             this.Name = "Form1";
-            this.Load += new System.EventHandler(this.numericUpDownInterval_Load);
+            this.numericUpDown.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged); // Замість Load події
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown)).EndInit();
             this.ResumeLayout(false);
 
@@ -111,7 +112,6 @@ namespace TrafficLightSimulation
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panelYellow;
         private System.Windows.Forms.Panel panelRed;
         private System.Windows.Forms.Panel panelGreen;

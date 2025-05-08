@@ -55,12 +55,12 @@ namespace TrafficLightSimulation
 
         }
 
-        private void buttonStart_Click_1(object sender, EventArgs e)
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        private void numericUpDown_Click(object sender, EventArgs e)
         {
 
         }
