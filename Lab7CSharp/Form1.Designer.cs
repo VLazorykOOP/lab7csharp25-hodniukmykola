@@ -59,7 +59,7 @@ namespace TrafficLightSimulation
             this.panelGreen.Name = "panelGreen";
             this.panelGreen.Size = new System.Drawing.Size(200, 100);
             this.panelGreen.TabIndex = 2;
-
+            
             // 
             // numericUpDown
             // 
